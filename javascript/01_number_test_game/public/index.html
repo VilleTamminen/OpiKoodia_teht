@@ -1,0 +1,25 @@
+<!DOCType html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Number guess game</title>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div style="margin:auto;">
+			<button onclick=reset()>Reset game</button>
+			<br/>
+
+			<h1>Give a number</h1>
+			<form id="form">
+				<label for="usernumber">Type number</label>
+				<input type="text"
+						name="usernumber"
+						id="usernumber"/>
+				<br/>
+
+				<button onclick=guessNumber(usernumber) type="button">Submit number</button>
+			</form>
+		</div>
+	</body>
+</html>
