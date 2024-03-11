@@ -58,19 +58,22 @@ class Book():
         self.isBorrowed=isBorrowed
 
     def info(self):
-        print(self.name,self.author,self.pages,self.genre,self.isBorrowed)
+        return self.id,self.name,self.author,self.pages,self.genre,self.isBorrowed
+
+       
     
 
 class Library():
    # booklist=[]
     def __init__(self, booklist = None):
         if booklist == None:
-            b1 = Book(0,"Dune","Frank Herbert",800,"sci-fi",False),
-            b2 = Book(1,"Dune Messias","Frank Herbert",600,"sci-fi",False),
-            b3 = Book(2,"One Piece","Eichiro Oda",100,"adventure",True),
-            b4 = Book(3,"Berserk","Kentarou Miura",300,"fantasy",True),
-            b5 = Book(4,"Magi","Ohtako Shinobu",800,"fantasy",False),
-            b6 = Book(5,"Kingdom","Haru Yasuhisa",500,"historical",False),
+            #Ei TOIMI JOS ON BOOK, ei pysty printtaamaan kauniisti tai ollenkaan
+            b1 = (0,"Dune","Frank Herbert",800,"sci-fi",False)
+            b2 = (1,"Dune Messias","Frank Herbert",600,"sci-fi",False)
+            b3 = (2,"One Piece","Eichiro Oda",100,"adventure",True)
+            b4 = (3,"Berserk","Kentarou Miura",300,"fantasy",True)
+            b5 = (4,"Magi","Ohtako Shinobu",800,"fantasy",False)
+            b6 = (5,"Kingdom","Haru Yasuhisa",500,"historical",False)
             self.booklist=[b1,b2,b3,b4,b5,b6]
         else:
             self.booklist=booklist
@@ -78,12 +81,16 @@ class Library():
     def sorting(self, x):
         if(x==0):
             print("available books")
-           # print(Library.booklist.sort(key=Book.isBorrowed))
+          #  print(Library.booklist.sort(key=Book.isBorrowed))
+
             for book in self.booklist:
-              #  print(book[0].name, book[0].author, book[0].pages, book[0].genre, book[0].isBorrowed)
+               # print(book[0].name, book[0].author, book[0].pages, book[0].genre, book[0].isBorrowed)
                # print(book[0].info(), end=" ", sep = ' ')
-                print(', '.join(book))
-           # print(Library.booklist)
+               # print(book.name,book.author,book.pages,book.genre,book.isBorrowed)
+                #",".join([str(s) for s in list(k)])
+               # print(book[0],book[1],book[2])
+                print(book[0], book[1], book[2],book[3],book[4],book[5])
+        
         elif x==1:
             print("borrowed books")
            # print(Library.booklist.sort(isBorrowed=True))
