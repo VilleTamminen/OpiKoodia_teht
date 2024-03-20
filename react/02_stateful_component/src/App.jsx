@@ -1,0 +1,13 @@
+import './App.css'
+import StatefulComponent from './StatefulComponent';
+
+function App() {
+
+  return (
+    <>
+      <StatefulComponent/>
+    </>
+  )
+}
+
+export default App

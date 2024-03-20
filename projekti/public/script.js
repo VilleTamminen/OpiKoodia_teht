@@ -5,14 +5,17 @@ https://www.youtube.com/watch?v=XSw5fFo0_pA             (javascript + PHP vue)
 https://github.com/aschmelyun/laraplace                 (ylemmän videon github. hämmentävä)
 https://github.com/dynastic/place                       (Javascript, NodeJS, Mongo, Yarn package manager)
 */
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+//const mongoose = require("mongoose");
+//const Schema = mongoose.Schema;
 
+var canvas;
+var ctx;
 window.onload = function() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
 }
-
+/*
+//https://github.com/dynastic/place/blob/main/models/pixel.js 
 var PixelSchema = new Schema({
     xPos: {
         type: Number,
@@ -43,7 +46,7 @@ var PixelSchema = new Schema({
         required: true
     }
 });
-
+*/
 const pixel = () =>
 {
 	let yPos;
@@ -94,10 +97,10 @@ function writePixel(x=0,y=0,color='ffffff'){
        
     }
 }
-function createRect(){
-    let x = 0;
-    let y = 0;
-    let side = 0;
+
+function createRect(x = 0, y= 0){
+    console.log("create rect");
+    let side = 50;
     let color = "#";
     const colorpicker = "0123456789ABCDEF";
 
@@ -106,8 +109,29 @@ function createRect(){
         color = color + colorpicker[temp];
     }
 
+    //canvas.getContext("2d").fillStyle = color;
+    //canvas.getContext("2d").fillRect(x,y,side,side);
     ctx.fillStyle = color;
     ctx.fillRect(x,y,side,side);
+
+   /* https://stackoverflow.com/questions/30208747/give-rectangle-an-id 
+    You can assign ids only to elements.
+    Since your rectangle is not an element, but the content of a canvas, 
+    it cannot have an id.
+    */
+    //https://www.w3schools.com/graphics/svg_rect.asp 
+    console.log("create rect end");
+}
+function round5(x)
+{
+    if(x % 5 == 0){
+        return x;
+    }
+    else{
+        //Math.ceil rounds up, so we decrease 5 at the end to get lowest value.
+        //ONLY IF x IS NOT MULTIPLE OF 5
+        return Math.ceil(x / 5) * 5 - 5;
+    }
 }
 
 //pixel data contains data of all pixels
@@ -119,4 +143,12 @@ function updatePixelData(){
     
 }
 
+function startCanvas(){
+    console.log("start rects");
+    createRect(10,10);
+    createRect(50,50);
+    createRect(100,100);
+    createRect(200,200);
+    console.log("end of start");
 
+}
