@@ -15,7 +15,7 @@ const mongo_password = process.env.MONGODB_PASSWORD;
 //lisätään kscontact / ja ? -merkkien väliin. kscontact on uuden databasen nimi.
 const url = "mongodb+srv://"+mongo_user+":"+mongo_password+"@"+mongo_url+"/kscontact?retryWrites=true&w=majority&appName=TestiKlusteri";
 
-console.log(url);
+//console.log(url);
 
 mongoose.connect(url).then(
 	() => console.log("Connected to MongoDB"),
