@@ -1,5 +1,5 @@
 /*
-https://github.com/SelbyJGomes/R-Place/tree/master      (JavaScript and NodeJS)
+https://github.com/SelbyJGomes/R-Place                  (JavaScript and NodeJS)
 https://codepen.io/ste-vg/pen/dvLvzy                    (Typescript)
 https://www.youtube.com/watch?v=XSw5fFo0_pA             (javascript + PHP vue)
 https://github.com/aschmelyun/laraplace                 (ylemmän videon github. hämmentävä)
